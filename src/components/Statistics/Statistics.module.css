@@ -1,0 +1,16 @@
+.statisticsList {
+  margin-top: 15px;
+}
+.statisticsItem {
+  background-color: #f0f8ff;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font-size: 20px;
+}
+.statisticsItem:not(:first-child) {
+  margin-top: 20px;
+}

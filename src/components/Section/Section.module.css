@@ -1,0 +1,13 @@
+.container {
+  padding: 40px;
+  width: 330px;
+  background-color: #87cefa;
+  border-radius: 8px;
+  box-shadow: 20px -15px 10px 5px rgba(0, 0, 0, 0.5);
+  font-family: 'Ibarra Real Nova', serif;
+}
+.title {
+  font-size: 34px;
+  display: flex;
+  justify-content: center;
+}
