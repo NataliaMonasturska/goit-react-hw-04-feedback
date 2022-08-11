@@ -10,18 +10,13 @@ export const App = () => {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
-  const countTotalFeedback = () => {
-    const total = good + neutral + bad;
-    return total;
-  };
+  const total = good + neutral + bad;
 
-  const countPositiveFeedbackPercentage = () => {
-  
-    const persentage = Math.round((good / (good + neutral + bad)) * 100)
-      ? Math.round((good / (good + neutral + bad)) * 100)
-      : 0;
-    return persentage;
-  };
+  const persentage = Math.round((good / (good + neutral + bad)) * 100)
+    ? Math.round((good / (good + neutral + bad)) * 100)
+    : 0;
+
+  const options = ['good', 'neutral', 'bad'];
 
   const onLeaveFeedback = ({ option }) => {
     if (option === 'good') {
@@ -35,20 +30,18 @@ export const App = () => {
     }
   };
 
-  const options = ['good', 'neutral', 'bad'];
-
   return (
     <div>
       <Section title="Please leave feedback">
         <FeedbackOptions options={options} onLeaveFeedback={onLeaveFeedback} />
         <h2 className={css.title}>Statistics</h2>
-        {countTotalFeedback() ? (
+        {total ? (
           <Statistics
             good={good}
             neutral={neutral}
             bad={bad}
-            total={countTotalFeedback()}
-            positivePercentage={countPositiveFeedbackPercentage()}
+            total={total}
+            positivePercentage={persentage}
           />
         ) : (
           <Notification message="There is no feedback" />
