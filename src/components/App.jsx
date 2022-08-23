@@ -16,7 +16,8 @@ export const App = () => {
     ? Math.round((good / (good + neutral + bad)) * 100)
     : 0;
 
-  const options = ['good', 'neutral', 'bad'];
+  const options = Object.keys({ good, neutral, bad });
+ 
 
   const onLeaveFeedback = ({ option }) => {
     if (option === 'good') {
